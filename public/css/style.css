@@ -293,3 +293,126 @@ header h1 {
     background-color: #2980b9;
 } 
 
+
+@media (max-width: 768px) {
+    /* Ajustar márgenes y padding */
+    .container {
+        flex-direction: column;
+        margin: 5rem auto 0;
+        max-width: 95%; /* Reducir el ancho máximo */
+        padding: 1rem;
+    }
+
+    /* Ajustar el header */
+    header {
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    /* Ajustar secciones izquierda y derecha */
+    .left-section,
+    .right-section {
+        max-width: 100%; /* Usar todo el ancho disponible */
+    }
+
+    .profile-photo {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    .about-content {
+        font-size: 0.9rem;
+    }
+
+    .skills {
+        gap: 1rem;
+        justify-content: center; /* Centrar las habilidades */
+    }
+
+    .projects {
+        grid-template-columns: 1fr; /* Una sola columna */
+        gap: 1rem;
+    }
+
+    .project-card {
+        padding: 1rem;
+    }
+
+    .project-card h3 {
+        font-size: 1rem;
+    }
+
+    /* Chatbot */
+    #chatbot-container {
+        bottom: 0.5rem;
+        right: 0.5rem;
+    }
+
+    #chatbot {
+        width: 90%; /* Usar casi todo el ancho del móvil */
+        max-height: 70vh; /* Usar un porcentaje de la altura */
+    }
+
+    #chatbot-messages {
+        height: 50vh; /* Reducir la altura del área de mensajes */
+    }
+
+    #chatbot-input {
+        padding: 0.5rem;
+        gap: 0.25rem;
+    }
+
+    #chatbot-input input {
+        font-size: 0.875rem;
+        padding: 0.5rem;
+    }
+
+    #chatbot-input button {
+        font-size: 0.875rem;
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ajustes adicionales para pantallas extra pequeñas */
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    .profile-photo {
+        width: 6rem;
+        height: 6rem;
+    }
+
+    .about-content {
+        font-size: 0.8rem;
+    }
+
+    .skills {
+        gap: 0.5rem;
+    }
+
+    .skill {
+        font-size: 0.8rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .project-card {
+        padding: 0.8rem;
+    }
+
+    .project-card h3 {
+        font-size: 0.9rem;
+    }
+
+    #chatbot {
+        max-height: 60vh;
+    }
+
+    #chatbot-messages {
+        height: 40vh;
+    }
+}
