@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <body>
+        <header>
+            <h1>Portafolio de Melina Fosque</h1>
+        </header>
+        <div class="container">
+            <!-- Contenido dividido -->
+            <div class="left-section">
+                <!-- About Me Section -->
+                <section id="about">
+                    <h2>Sobre Mí</h2>
+                    <div class="about-content">
+                        <img src="img/Perfil.jpg" alt="Mi Foto" class="profile-photo">
+                        <div class="personal-info">
+                            <p><strong>Nombre:</strong> Melina Fosque</p>
+                            <p><strong>Profesión:</strong> Desarrolladora de Software y Analista de Sistemas</p>
+                            <p><strong>Email:</strong> melina.analista.sistemas@gmail.com</p>
+                            <p><strong>Teléfono:</strong> +54 9 223 526 0237</p>
+                            <p><strong>Ubicación:</strong> Mar del Plata, Argentina</p>
+                            <p><strong>Lenguajes y Habilidades:</strong></p>
+                            <ul>
+                                <li>JavaScript, CSS, HTML</li>
+                                <li>Python (Especialización en Data Science)</li>
+                                <li>C++ y C</li>
+                                <li>SQL y Bases de Datos Relacionales</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="right-section">
+                <!-- Projects Section -->
+                <section id="projects">
+                    <h2>Proyectos</h2>
+                    <div class="projects">
+                        <div class="project-card">
+                            <h3>Sistema de gestion Rotiseria</h3>
+                            <p>Sistema de gestion de stock, control de precios, calculo de costos, almacenamiento de datos, conexión con api de ARCA (Agencia de Recaudación y Control de Argentina).</p>
+                            <a href="https://github.com/melifosque/DonnaIsa/tree/master" target="_blank">Ver en GitHub</a>
+                        </div>
+                        <div class="project-card">
+                            <h3>Chat</h3>
+                            <p>Chat con WebSocket, sistema de encriptación y autenticación mediante SMS, correo electrónico, captcha y preguntas de seguridad.</p>
+                            <a href="https://github.com/melifosque/seminario-de-actualizacion/tree/main/Chat" target="_blank">Ver en GitHub</a>
+                        </div>
+                        <div class="project-card">
+                            <h3>Proximamente</h3>
+                            <p>Proximamente</p>
+                            <a href="https://github.com/username/project3" target="_blank">Ver en GitHub</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    
+        <!-- Chatbot Section -->
+        <div id="chatbot-container">
+            <!-- Botón para abrir el chatbot -->
+            <div id="chatbot-button" class="chatbot-icon">
+                <i class="fas fa-comments"></i>
+            </div>
+            
+            <!-- Contenedor del chatbot, inicialmente oculto con la clase "hidden" -->
+            <div id="chatbot" class="hidden">
+                <div id="chatbot-header">
+                    Chatbot
+                </div>
+                <div id="chatbot-messages"></div>
+                <div id="chatbot-input">
+                    <input type="text" id="user-input" placeholder="Escribe tu mensaje...">
+                    <button id="send-btn">Enviar</button>
+                </div>
+            </div>
+        </div>
+
+    <script src="js/chatbot.js"></script>
+</body>
+</html>

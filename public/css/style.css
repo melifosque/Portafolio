@@ -1,0 +1,295 @@
+:root {
+    --primary-bg: #243b55;
+    --secondary-bg: #142850;
+    --accent-color: #f9a825;
+    --text-color: #fff;
+    --link-color: #4fc3f7;
+    --hover-accent: #ffd54f;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --shadow-hover: rgba(0, 0, 0, 0.3);
+    --font-size-base: 1rem; /* Tamaño base */
+    --font-size-lg: 1.25rem; /* Para títulos */
+    --font-size-xl: 2rem; /* Títulos grandes */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #1e3c72, #2a5298);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header {
+    background: var(--secondary-bg);
+    padding: 1.5rem;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+header h1 {
+    margin: 0;
+    font-size: var(--font-size-xl);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    margin: 8rem auto 0;
+    max-width: 80%;
+    padding: 1.5rem;
+}
+
+.left-section,
+.right-section {
+    flex: 1;
+}
+
+.left-section {
+    max-width: 40%;
+}
+
+.right-section {
+    max-width: 55%;
+}
+
+.about-content {
+    text-align: left;
+    margin: 2rem 0;
+    font-size: 1rem;
+}
+
+.profile-photo {
+    border-radius: 50%;
+    width: 12rem;
+    height: 12rem;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+}
+
+.personal-info p {
+    margin: 0.75rem 0;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: flex-start;
+    margin-top: 1.5rem;
+}
+
+.skill {
+    background: var(--primary-bg);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px var(--shadow-color);
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background: var(--primary-bg);
+    border-radius: 0.625rem;
+    padding: 1.25rem;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-0.625rem);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+.project-card a {
+    text-decoration: none;
+    color: var(--link-color);
+    font-weight: bold;
+}
+
+/* Estilo para el chatbot */
+#chatbot-container {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1000;
+}
+
+/* Botón del chatbot */
+#chatbot-button {
+    background: var(--accent-color);
+    border-radius: 50%;
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 8px var(--shadow-color);
+    transition: background-color 0.3s;
+    font-size: 1.75rem; /* Icono más grande */
+    color: var(--secondary-bg); /* Color del ícono */
+}
+
+#chatbot-button:hover {
+    background-color: var(--hover-accent);
+}
+
+#chatbot {
+    display: none;
+    width: 22rem; /* Aumentar el ancho del chatbot */
+    background: var(--primary-bg);
+    border-radius: 0.625rem;
+    box-shadow: 0 4px 8px var(--shadow-hover);
+    overflow: hidden;
+    max-height: 30rem; /* Limita la altura máxima del chatbot */
+}
+
+#chatbot.open {
+    display: block;
+}
+
+#chatbot-header {
+    background: var(--secondary-bg);
+    padding: 0.625rem;
+    text-align: center;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+/* Mensajes del chatbot */
+#chatbot-messages {
+    height: 18.75rem;
+    overflow-y: auto;
+    padding: 0.625rem;
+    color: var(--text-color);
+    margin-bottom: 1rem; /* Añadir espacio en la parte inferior */
+}
+
+.chatbot-message {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    max-width: 80%;
+    font-size: 1rem;
+    opacity: 0.2;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0.2;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.bot-message {
+    background-color: #f1f1f1;
+    color: #333;
+    border-radius: 5px;
+}
+
+.user-message {
+    background-color: #f1f1f1; /* Celeste para el mensaje del usuario */
+    color: #333;
+    border-radius: 5px;
+}
+
+#chatbot-messages {
+    height: 18.75rem;
+    overflow-y: auto;
+    padding: 0.625rem;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    transition: scroll-behavior 0.5s;
+}
+
+#chatbot-input {
+    display: flex;
+    justify-content: space-between; /* Distribuir los elementos */
+    align-items: center; /* Centra verticalmente */
+    padding: 0.625rem;
+    gap: 0.5rem;
+    width: 100%;
+    box-sizing: border-box; /* Asegura que el padding no aumente el tamaño total */
+}
+
+#chatbot-input input {
+    flex: 1; /* Deja que el input ocupe el espacio restante */
+    padding: 0.625rem;
+    border: none;
+    border-radius: 0.3125rem;
+    font-size: 1rem;
+    max-width: 18rem; /* Limita el ancho máximo del input */
+    box-sizing: border-box;
+}
+
+#chatbot-input button {
+    background: var(--accent-color);
+    border: none;
+    border-radius: 0.3125rem;
+    padding: 0.625rem;
+    color: var(--secondary-bg);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.5rem; /* Espacio entre el input y el botón */
+}
+
+/* Botones de las opciones */
+.option-btn {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.option-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Entrada de texto y botón de enviar */
+#chatbot-input input,
+#chatbot-input button {
+    font-size: 1rem;  /* Estandarizar el tamaño de texto */
+}
+
+#chatbot-input button {
+    background: #3498db; /* Color consistente para el botón */
+    color: white;
+}
+
+#chatbot-input button:hover {
+    background-color: #2980b9;
+} 
+
